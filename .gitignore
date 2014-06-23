@@ -1,0 +1,13 @@
+*.class
+*.apk
+bin/
+gen/
+.settings/
+proguard/
+target/
+gwt-unitCache/
+classes/
+war/
+.classpath
+.project
+tomcat/

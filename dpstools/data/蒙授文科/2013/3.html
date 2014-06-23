@@ -1,0 +1,2144 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>高考GPS-高考志愿院校查询</title>
+<meta name="Description" content="高考志愿院校查询:专为内蒙古考生打造，根据历年录取数据，按分数范围直接查找目标学校及历年录取数据，其中院校报考热度、生源指标等多项参数可作具体参考." />
+<meta name="Keywords" content="华途盛业|内蒙古高考|大学|高校|专业|高考|报考|志愿填报|一本|二本|三本|专业比较|院校比较|提档分|招生数|投档分|高职高专|考生去向|内蒙古网报|内蒙古网上填报志愿|" />
+
+<link href="images/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    function MM_preloadImages() { //v3.0
+        var d = document; if (d.images) {
+            if (!d.MM_p) d.MM_p = new Array();
+            var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+        }
+    }
+
+    function MM_swapImgRestore() { //v3.0
+        var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+    }
+
+    function MM_findObj(n, d) { //v4.01
+        var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+            d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+        }
+        if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+        for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+        if (!x && d.getElementById) x = d.getElementById(n); return x;
+    }
+
+    function MM_swapImage() { //v3.0
+        var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2) ; i += 3)
+            if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+    }
+
+       function MM_showHideLayers() { //v9.0
+      var i,p,v,obj,args=MM_showHideLayers.arguments;
+      for (i=0; i<(args.length-2); i+=3) 
+      with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+        if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+        obj.visibility=v; }
+    }
+</script>
+
+   <style type="text/css">
+.apDiv1 {
+	position:absolute;
+	width:18px;
+	height:17px;
+	z-index:1;
+}
+
+.apDiv2 {
+	position:absolute;
+	width:700px;
+	height:206px;
+	z-index:1;
+	left: 80px;
+	top: -50px;
+	border:solid 2px #0099ff;
+	background:#fff;
+	padding:10px;
+	line-height:25px;
+	font-size:14px;
+	color:#666;
+	visibility: hidden;
+}
+
+.apHDiv1 {
+	position:absolute;
+	width:18px;
+	height:17px;
+	z-index:1;
+}
+
+.apHDiv2 {
+	position:absolute;
+	width:200px;
+	height:206px;
+	z-index:1;
+	left: -240px;
+	top: -1px;
+	border:solid 2px #0099ff;
+	background:#fff;
+	padding:10px;
+	line-height:25px;
+	font-size:14px;
+	color:#666;
+	visibility: hidden;
+}
+
+.apSHDiv1 {
+	position:absolute;
+	width:18px;
+	height:17px;
+	z-index:1;
+}
+
+.apSHDiv2 {
+	position:absolute;
+	width:200px;
+	height:100px;
+	z-index:1;
+	left: 50px;
+	top: 0px;
+	border:solid 2px #0099ff;
+	background:#fff;
+	padding:10px;
+	line-height:25px;
+	font-size:14px;
+	color:#666;
+	visibility: hidden;
+}
+
+.apinfoDiv1 {
+	position:absolute;
+	width:18px;
+	height:17px;
+	z-index:3;
+}
+
+.apinfoDiv2 {
+	position:absolute;
+	width:380px;
+	height:316px;
+	z-index:3;
+	left:230px;
+	top: 0px;
+	border:solid 2px #0099ff;
+	background:#fff;
+	padding:10px;
+	line-height:25px;
+	font-size:14px;
+	color:#666;
+	visibility: hidden;
+}
+
+
+</style>
+<script language="javascript" type="text/javascript">
+    function closeDiv() {
+
+        $("#abc").hide();
+        $("#cbd").show();
+    }
+</script>
+<script language="javascript" type="text/javascript">
+    function closeDiv1() {
+
+        $("#abc1").hide();
+        $("#cbd1").show();
+    }
+</script>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"> </script>
+<script language="javascript" type="text/javascript">
+function fenshu_checkform()
+{
+	var bscore=$.trim($("#bscore").val());
+	var escore=$.trim($("#escore").val());
+	if(bscore=="")
+	{
+		alert("请填写考试分数！");
+		return;
+	}
+	
+	$("#fenshu_form").submit();
+}
+
+</script>
+</head>
+
+<body onload="MM_preloadImages('images/biao_47.jpg')">
+<div id="header">
+<div id="top">
+	<div class="tleft">
+	朱景一，欢迎来到志愿填报智能分析系统！   <span id="remain_time"></span>
+		
+		
+		</div>
+  <div class="tright"><ul><li class="backbj"><a href="/">回网站首页</a></li>
+  <li class="helpcenterbj"><a target ="_blank" href ="/info/help.aspx">帮助中心</a></li><li class="tcregbj">
+  
+  	<a href="/logout.aspx">退出</a>
+  
+  
+  </li>
+  </ul></div>
+</div>
+</div>
+<iframe src="/inc/online.aspx" style="display:none"></iframe>
+<iframe src="/inc/online_updatelasttime.aspx" style="display:none"></iframe>
+<script language="javascript" type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script language="javascript" type="text/javascript">
+var cur_remain_time=60 * 60;
+var user_type="3";
+var intervalId;
+
+function auto_show_time()
+{
+	if(cur_remain_time>0 && (user_type=="1" || user_type=="2" || user_type=="3"))
+	{
+		$("#remain_time").show();
+		intervalId=setInterval("show_time()",1000);
+	}
+	else
+	{
+		$("#remain_time").hide();	
+	}
+}
+function show_time()
+{
+	var h=Math.floor((cur_remain_time / (60 *60 )));//小时
+	var h_r_s=cur_remain_time-h*60*60;
+	
+	var m=Math.floor(h_r_s / 60);//分钟
+	var s=h_r_s- m *60;
+	$("#remain_time").html("还剩"+h+"小时"+m+"分"+s+"秒");
+	cur_remain_time--;
+	
+	
+}
+$(function(){
+	auto_show_time();
+});
+</script>
+
+<LINK rel=stylesheet type=text/css href="/css/common1.css">
+<SCRIPT type=text/javascript src="js/jquery_kf.js"></SCRIPT>
+<SCRIPT type=text/javascript src="js/kefu.js"></SCRIPT>
+
+
+<DIV id=floatTools class=float0831>
+  <DIV class=floatL><A style="DISPLAY: none" id=aFloatTools_Show class=btnOpen 
+title=查看在线客服 
+onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show();kf_setCookie('RightFloatShown', 0, '', '/', 'www.istudy.com.cn'); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" 
+href="javascript:void(0);">展开</A> <A id=aFloatTools_Hide class=btnCtn 
+title=关闭在线客服 
+onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide();kf_setCookie('RightFloatShown', 1, '', '/', 'www.istudy.com.cn'); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" 
+href="javascript:void(0);">收缩</A> </DIV>
+  <DIV id=divFloatToolsView class=floatR>
+    <DIV class=tp></DIV>
+    <DIV class=cn>
+      <UL>
+        <LI class=top>
+          <H3 class=titZx>QQ咨询</H3>
+        </LI>
+        <LI>
+          <A target=_blank href="/helper.aspx" target="_blank" style="FLOAT: left"><IMG src="/images/kf_fangan.gif" border="0px"></A>
+        </LI>
+        <LI>
+          <A target=_blank href="/onebyone.aspx" target="_blank" style="FLOAT: left"><IMG src="/images/kf_zj11.gif" border="0px"></A>
+        </LI>
+        <LI><SPAN class=icoZx>在线咨询</SPAN> </LI>
+        <LI><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2594046324&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2594046324:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></LI>
+        <!--
+        <LI><A class=icoTc href="javascript:void(0);">B老师</A> </LI>
+        <LI><A class=icoTc href="#">C老师</A> </LI>
+        <LI class=bot><A class=icoTc href="javascript:void(0);">D老师</A> </LI>
+        -->
+      </UL>
+      <UL class=webZx>
+        <LI class=webZx-in><IMG src="/images/right_float_web.png" border="0px" style="FLOAT: left"></LI>
+      </UL>
+      <UL>
+        <LI>
+          <H3 class=titDh>电话咨询</H3>
+        </LI>
+        <LI><SPAN class=icoTl>400-066-0016</SPAN> </LI>
+
+      </UL>
+    </DIV>
+  </DIV>
+</DIV>
+
+<div id="main">
+	<div class="conter">
+    	
+<div class="mcleft">
+        	<div class="touxian">
+        	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        	    <tr>
+        	      <td width="52"><a href="/index.aspx"><img src="/images/biao_17.jpg" width="51" height="52" /></a></td>
+        	      <td width="8">&nbsp;</td>
+        	      <td> 志 愿 填 报<br />
+       	           综 合 系 统</td>
+      	        </tr>
+      	    </table>
+        	</div>
+            
+
+
+
+
+<div class="leftnav">
+
+ <!--<div class="leftnavul"><div class="leftdt"><img src="/images/biao_77.jpg" width="22" height="19" /></div><div class="rightdd">志愿填报方案</div></div>-->
+ 
+       
+           
+             <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_h_1.jpg" width="22" height="19" alt="内蒙古填报志愿"/></span></div><div class="rightdd"><a href="/report/report.aspx">我的报考方案</a></div></div>
+             
+             <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_h_2.jpg" width="22" height="19" alt="内蒙古填报志愿"/></span></div><div class="rightdd"><a href="/report/school_list.aspx">我的院校库</a></div></div>
+             
+             <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_h_3.jpg" width="22" height="19" alt="内蒙古填报志愿"/></span></div><div class="rightdd"><a href="/report/major_list.aspx">我的专业介绍</a></div></div>
+             
+             <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_h_4.jpg" width="22" height="19" alt="内蒙古填报志愿"/></span></div><div class="rightdd"><a target=_blank href="/report/pc_final.aspx">我的测评报告</a></div></div>     
+       
+             <!--<div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_h_5.jpg" width="22" height="19" alt="内蒙古填报志愿"/></span></div><div class="rightdd"><a href="/wbjc.aspx">网报实时监测</a></div></div>-->
+    		
+          <!--  <div class="leftnavul "><div class="rightdd"><a href="/cards_shop4.aspx">高考志愿填报方案buy</a></div></div>
+    		
+            <div class="leftnavul "><div class="rightdd"><a href="/cards_shop5.aspx">专家一对一报考功略</a></div></div>-->
+            
+            <!--
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  				<tr>
+    				<td height="10" colspan="2"  style="background:url(/images/xian_71.jpg) no-repeat center center; height:10">&nbsp;</td>
+   				</tr>
+  			</table>
+            <div class="leftnavul "><div class="leftdt"><img src="/images/biao_67.jpg" width="22" height="19" /></div><div class="rightdd"><a href="/cards_shop7.aspx">公益巡回讲座</a></div></div>
+            -->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  				<tr>
+    				<td height="10" colspan="2"  style="background:url(/images/xian_71.jpg) no-repeat center center; height:10">&nbsp;</td>
+   				</tr>
+  			</table>
+  			
+ <!--           <div class="leftnavul "><div class="leftdt"><img src="/images/biao_37.jpg" width="22" height="19" alt="内蒙古填报志愿"/></div><div class="rightdd">
+<table border="0" width="100%" id="table1" cellspacing="0" cellpadding="0">
+	<tr>
+		<td><a href="/fraction.aspx">志愿智能推荐</a></td>
+		<td align="left"><img src="/images/i_hot.gif" alt="内蒙古填报志愿"/></td>
+	</tr>
+</table>
+            </div></div>-->
+ 
+            <div class="leftnavul "><div class="leftdt"><img src="/images/biao_63.jpg" width="22" height="19" alt="内蒙古高考填报志愿"/></div><div class="rightdd"><a href="/examinee_query.aspx">考生去向查询</a></div></div>
+
+            <div class="leftnavul lettnavbj"><div class="leftdt"><img src="/images/biao_49.jpg" width="22" height="19" alt="内蒙古志愿填报"/></div><div class="rightdd"><a href="/index_yxsj.aspx">我要挑学校</a></div></div>
+    		
+            <div class="leftnavul "><div class="leftdt"><img src="/images/biao_69.jpg" width="22" height="19" alt="内蒙古高考填报志愿"/></div><div class="rightdd"><a href="/index_zysjcx.aspx">我要选专业</a></div></div>
+
+  <!--          <div class="leftnavul "><div class="leftdt"><img src="/images/biao_28.jpg" width="22" height="19" alt="内蒙古高考志愿填报"/></div><div class="rightdd">
+            <table border="0" width="100%" id="table2" cellspacing="0" cellpadding="0">
+	<tr>
+		<td><a href="/wbjc.aspx">网报实时监测</a></td>
+		<td align="left"><img src="/images/i_new.gif" alt="内蒙古填报志愿"/></td>
+	</tr>
+</table>
+            </div></div>-->
+    		
+            <div class="leftnavul "><div class="leftdt"><img src="/images/biao_53.jpg" width="22" height="19" /></div><div class="rightdd"><a href="/zfpc.aspx">位次排名与转分</a></div></div>
+            
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  				<tr>
+    				<td height="10" colspan="2"  style="background:url(/images/xian_71.jpg) no-repeat center center; height:10">&nbsp;</td>
+   				</tr>
+  			</table>
+  			
+            <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_28.jpg" width="22" height="19" alt="内蒙古高考志愿填报" /></span></div><div class="rightdd"><a href="/moni/index.aspx" target='_blank' >全真模拟网报</a></div></div>
+
+            <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_61.jpg" width="22" height="19" alt="内蒙古填报志愿"/></span></div><div class="rightdd"><a href="/schoollist.aspx">高考院校库</a></div></div>
+    		
+            <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_53.jpg" width="22" height="19" alt="内蒙古填报志愿"/></span></div><div class="rightdd"><a href="/schoolrank.aspx">全国高校排名</a></div></div>
+
+            <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_69.jpg" width="22" height="19" alt="内蒙古填报志愿"/></span></div><div class="rightdd"><a href="/majorlist.aspx">本专科专业内涵</a></div></div>
+  
+            <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_39.jpg" width="22" height="19" alt="内蒙古高考志愿填报"/></span></div><div class="rightdd"><a target=_blank href="/pingce/default.aspx">升学导向测评</a></div></div>
+    	   		
+            <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_63.jpg" width="22" height="19" alt="内蒙古高考志愿填报" /></span></div><div class="rightdd"><a href="/job.aspx">职位百科</a></div></div>
+            
+                       <div class="leftnavul "><div class="leftdt"><span class='cf_my'><img src="/images/biao_57.jpg" width="22" height="19" alt="内蒙古填报志愿"/></span></div><div class="rightdd"><a href="/school_expenses.aspx">我要查学费</a></div></div>
+           <!--<div class="leftnavul "><div class="leftdt"><img src="/images/biao_63.jpg" width="22" height="19" /></div><div class="rightdd"><a href="/wbjc.aspx">网报实时监测</a></div></div>-->
+    		
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  				<tr>
+    				<td height="10" colspan="2"  style="background:url(/images/xian_71.jpg) no-repeat center center; height:10">&nbsp;</td>
+   				</tr>
+  			</table>
+  			
+    		
+           
+  				
+            <div class="leftnavul"><div class="leftdt"><img src="/images/biao_71.jpg" width="22" height="19" /></div><div class="rightdd">个人中心</div></div>
+    		
+            <div class="leftnavul "><div class="rightdd"><a href="/cards_shop1.aspx">用户升级</a></div></div>
+    		
+            <div class="leftnavul "><div class="rightdd"><a href="/myorders.aspx">我的订单</a></div></div>
+    		
+            <div class="leftnavul "><div class="rightdd"><a href="/myusetimes.aspx">时长使用纪录</a></div></div>
+            
+   
+    		
+           <!-- <div class="leftnavul "><div class="rightdd"><a href="myorders.aspx">购买纪录</a></div></div>-->
+            
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  				<tr>
+    				<td height="10" colspan="2"  style="background:url(/images/xian_71.jpg) no-repeat center center; height:10">&nbsp;</td>
+   				</tr>
+  			</table>
+  			
+  			
+           <!-- <div class="leftnavul"><div class="leftdt"><img src="/images/biao_77.jpg" width="22" height="19" /></div><div class="rightdd">VIP志愿分析报告</div></div>-->
+    		
+           <div class="leftnavul "><div class="leftdt"><img src="/images/biao_79.jpg" width="22" height="19" /></div><div class="rightdd"><a href="/zxzx.aspx">专家咨询</a></div></div>
+    		
+            <div class="leftnavul "><div class="leftdt"><img src="/images/biao_81.jpg" width="22" height="19" /></div><div class="rightdd"><a href="/user_profile.aspx">用户设置</a></div></div>
+            
+            
+      </div>
+
+
+
+
+
+
+        </div>
+        
+        <div class="chome">
+        	<div class="ctitle"><h1>院校数据查询<span>按分数范围直接查找目标学校及历年录取数据，其中院校报考热度、生源指标等多项参数可作具体参考</span></h1></div>
+          <div class="homeconter">
+            <div class="hmaint"><div class="soseacher1 back_eeeeee">
+			
+			
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<form action="index_yxsj.aspx" method="get" id="fenshu_form" name="fenshu_form"><input type="hidden" name="action" value="fenshu" />
+  <tr>
+    <td width="18%"><strong style="font-size:14px">按分数查询</strong></td>
+    <td width="82%"><div class="input" style="padding-top:8px;">考试分数：</div><div class="w_80 input">     <input type="text" name="bscore" id="bscore" style="width:80px; border:0; background-color:transparent;"/>
+    </div><div class="input" style="padding-top:8px;">分</div><div class="w_120 input">
+           <select name="year" id="year" style="width:120px; border:0; background-color:transparent;">
+             <option value="2013">2013年</option>
+             <option value="2012">2012年</option>
+             <option value="2011">2011年</option>
+             <option value="2010">2010年</option>
+             <option value="2009">2009年</option>
+           </select>
+    </div><div class="input" ><img src="images/cyx_03.jpg" width="60" height="28" border="0" onclick="fenshu_checkform()" style="cursor:pointer"/></div></td>
+  </tr>
+  <tr>
+    <td valign="top" style="color:#666;">（蒙授文科）</td>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:5px;">
+      <tr>
+        <td width="16%" valign="top" style="color:#333; line-height:26px;">院校所在地区：</td>
+        <td width="84%" valign="top" style="color:#333; line-height:20px"><div style="line-height:20px;">
+          <div class="buxian" onclick="closeDiv()" id="abc"><a href="#nogo" title="移除">不限</a></div>
+          <ul class="cf" id="cbd" style="display:none;"><li><label><input name="J_ScoreProvince" type="checkbox" value="北京">北京</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="天津">天津</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="河北">河北</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="山西">山西</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="内蒙古">内蒙古</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="辽宁">辽宁</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="吉林">吉林</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="黑龙江">黑龙江</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="上海">上海</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="江苏">江苏</label></li><li><label>
+            <input name="J_ScoreProvince" type="checkbox" value="浙江" />浙江</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="安徽">安徽</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="福建">福建</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="江西">江西</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="山东">山东</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="河南">河南</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="湖北">湖北</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="湖南">湖南</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="广东">广东</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="广西">广西</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="海南">海南</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="重庆">重庆</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="四川">四川</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="贵州">贵州</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="云南">云南</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="西藏">西藏</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="陕西">陕西</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="甘肃">甘肃</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="青海">青海</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="宁夏">宁夏</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="新疆">新疆</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="台湾">台湾</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="香港">香港</label></li><li><label><input name="J_ScoreProvince" type="checkbox" value="澳门">澳门 </label></li></ul>
+          </div></td>
+      </tr>
+      </table></td>
+  </tr>
+  </form>
+</table>
+
+
+</div>
+
+
+<div id="apinfoDiv1" class="apinfoDiv1">
+     <div id="apinfoDiv2"  class="apinfoDiv2">
+   <table border="0" width="100%" id="table6" cellpadding="0" class="sjgtable">
+	<tr>
+		<td>请确认您是否为“蒙授文科”类型考生<br>如果不符请进入个人中心修改，并重新登陆<br><img src="/images/grey_pix_l.gif" height="1" width="90%"/></td>
+	</tr>
+	<tr>
+		<td class="cf63">《系统指标说明》</td>
+	</tr>
+	<tr>
+		<td style="text-align: left"><b>报考热度：</b>是指院校计划招生人数与实际投档人数之比。<br><br>
+<b>内蒙古生源指标</b>是指该专业或院校的投档考生分数状况，优为平均分大幅度高出投档分，良为平均分小幅度高于投档分，中为平均分与投档分基本持平。<br><br>
+<b>就业推荐</b>是教育部2013年统计计算出的各专业就业情况。<br><br>
+数据“报考热度”需与“内蒙古生源指标”结合参考，综合指导志愿选择。
+</td>
+	</tr>
+</table>
+      </div>
+    </div>
+
+        <div class="sojieguo">
+       <div class="p"> 
+       <table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+            <td>此成绩<span class=cf63>720分</span> 在2014年内蒙古考生排名为<span class=cf63></span>位,参考2013年数据转分成绩为:<span class=cf63>700</span>分</div>
+       </td>
+       <tr>
+       <td>
+       内蒙古 <span class="cf63"> 蒙授文科 700</span>考生在<span class="cf63"> 2013年 </span>符合查询条件的院校数据！&nbsp;&nbsp;  
+       </td>
+       <td  style="text-align: right" onfocus="MM_showHideLayers('apinfoDiv2','','hide')"  onmouseover="MM_showHideLayers('apinfoDiv2','','show')" onmouseout="MM_showHideLayers('apinfoDiv2','','hide')">
+       <img  src="/images/yh_gantanhao.gif"/>&nbsp;<span  class="cf63">友情提示</span> 
+       </td></tr></table>
+       
+        </div> 	
+
+       <table width="100%" border="0" cellspacing="1" cellpadding="0" class="sjgtable">
+  <tr style="background-color:#7e7e7e; color:#FFF">
+    <td>报考热度</td>
+    <td>院校名称</td>
+    <td><select name="select" id="select" style="border:0; background-color:transparent;color:#000;" onchange="location.href=location.href.replace(/J_ScoreProvince/gi,'')+'&J_ScoreProvince='+this.options[this.selectedIndex].value">
+      <option value="">所在地</option>
+	  
+	  	<option value="北京">北京</option>
+	   
+	  	<option value="甘肃">甘肃</option>
+	   
+	  	<option value="河北">河北</option>
+	   
+	  	<option value="黑龙江">黑龙江</option>
+	   
+	  	<option value="吉林">吉林</option>
+	   
+	  	<option value="江西">江西</option>
+	   
+	  	<option value="辽宁">辽宁</option>
+	   
+	  	<option value="内蒙古">内蒙古</option>
+	   
+	  	<option value="青海">青海</option>
+	   
+	  	<option value="上海">上海</option>
+	   
+	  	<option value="天津">天津</option>
+	   
+	  	<option value="新疆">新疆</option>
+	   
+       <option value="">全部</option>
+    </select></td>
+    <td>院校类型</td>
+    <td><select name="select1" id="select1" style="border:0; background-color:transparent;color:#000;" onchange="location.href=location.href.replace(/pici/gi,'')+'&pici='+this.options[this.selectedIndex].value">
+      <option value="">招生批次</option>
+	  
+	  	<option value="0B">本科提前批</option>
+	   
+	  	<option value="1">本科第一批</option>
+	   
+	  	<option value="2">本科第二批</option>
+	   
+	  	<option value="2B">本科二批B</option>
+	   
+	  	<option value="3">高职高专批</option>
+	   
+       <option value="">全部批次</option>
+    </select></td>
+    <td>平均分</td>
+    <td>录取数</td>
+    <td>查看详情</td>
+  </tr>
+  
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH40Div2','','hide')" class="cf63" style="text-align: left"><div id="apH40Div1" class="apHDiv1">
+     <div id="apH40Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="32" height="8" src="/images/bk_hot_blue.gif"><img  width ="57" height="8" src="/images/bk_hot_grey.gif"/>50%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：2人<br>实际报考人数：1人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH40Div2','','show')" onmouseout="MM_showHideLayers('apH40Div2','','hide')"><img  width ="12" height="8" src="/images/bk_hot_blue.gif"><img  width ="37" height="8" src="/images/bk_hot_grey.gif"/><br>50%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=551">黑龙江工程学院</a></strong>
+	<span class='cf_rank' title='院校综合排名:654'>综TOP:654</span>
+		        
+	</td>
+
+
+    <td>黑龙江</td>
+    <td>工科
+</td>
+    <td>本科第二批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH40Div2','','hide')"><div id="apSH40Div1" class="apSHDiv1">
+     <div id="apSH40Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：321分<br>平均分：341分<br>最高分：341分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH40Div2','','show')" onmouseout="MM_showHideLayers('apSH40Div2','','hide')">341<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>2人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=563&m_pici=2&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH41Div2','','hide')" class="cf63" style="text-align: left"><div id="apH41Div1" class="apHDiv1">
+     <div id="apH41Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="42" height="8" src="/images/bk_hot_blue.gif"><img  width ="47" height="8" src="/images/bk_hot_grey.gif"/>89%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：9人<br>实际报考人数：8人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH41Div2','','show')" onmouseout="MM_showHideLayers('apH41Div2','','hide')"><img  width ="22" height="8" src="/images/bk_hot_blue.gif"><img  width ="27" height="8" src="/images/bk_hot_grey.gif"/><br>89%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=432">青海师范大学</a></strong>
+	<span class='cf_rank' title='院校综合排名:265'>综TOP:265</span>
+		        
+	</td>
+
+
+    <td>青海</td>
+    <td>师范
+</td>
+    <td>本科第二批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH41Div2','','hide')"><div id="apSH41Div1" class="apSHDiv1">
+     <div id="apSH41Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：321分<br>平均分：335分<br>最高分：343分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH41Div2','','show')" onmouseout="MM_showHideLayers('apSH41Div2','','hide')">335<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>9人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=444&m_pici=2&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH42Div2','','hide')" class="cf63" style="text-align: left"><div id="apH42Div1" class="apHDiv1">
+     <div id="apH42Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="32" height="8" src="/images/bk_hot_blue.gif"><img  width ="58" height="8" src="/images/bk_hot_grey.gif"/>48%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：307人<br>实际报考人数：146人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH42Div2','','show')" onmouseout="MM_showHideLayers('apH42Div2','','hide')"><img  width ="12" height="8" src="/images/bk_hot_blue.gif"><img  width ="38" height="8" src="/images/bk_hot_grey.gif"/><br>48%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=449">呼伦贝尔学院</a></strong>
+	<span class='cf_rank' title='院校综合排名:590'>综TOP:590</span>
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>综合
+</td>
+    <td>本科第二批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH42Div2','','hide')"><div id="apSH42Div1" class="apSHDiv1">
+     <div id="apSH42Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：321分<br>平均分：331分<br>最高分：385分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH42Div2','','show')" onmouseout="MM_showHideLayers('apSH42Div2','','hide')">331<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>307人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=461&m_pici=2&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH43Div2','','hide')" class="cf63" style="text-align: left"><div id="apH43Div1" class="apHDiv1">
+     <div id="apH43Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="40" height="8" src="/images/bk_hot_blue.gif"><img  width ="50" height="8" src="/images/bk_hot_grey.gif"/>80%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：10人<br>实际报考人数：8人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH43Div2','','show')" onmouseout="MM_showHideLayers('apH43Div2','','hide')"><img  width ="20" height="8" src="/images/bk_hot_blue.gif"><img  width ="30" height="8" src="/images/bk_hot_grey.gif"/><br>80%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=697">衡水学院</a></strong>
+	<span class='cf_rank' title='院校综合排名:654'>综TOP:654</span>
+		        
+	</td>
+
+
+    <td>河北</td>
+    <td>综合
+</td>
+    <td>本科第二批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH43Div2','','hide')"><div id="apSH43Div1" class="apSHDiv1">
+     <div id="apSH43Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：321分<br>平均分：331分<br>最高分：347分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH43Div2','','show')" onmouseout="MM_showHideLayers('apSH43Div2','','hide')">331<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>10人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=709&m_pici=2&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH44Div2','','hide')" class="cf63" style="text-align: left"><div id="apH44Div1" class="apHDiv1">
+     <div id="apH44Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="35" height="8" src="/images/bk_hot_blue.gif"><img  width ="55" height="8" src="/images/bk_hot_grey.gif"/>60%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：231人<br>实际报考人数：139人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH44Div2','','show')" onmouseout="MM_showHideLayers('apH44Div2','','hide')"><img  width ="15" height="8" src="/images/bk_hot_blue.gif"><img  width ="35" height="8" src="/images/bk_hot_grey.gif"/><br>60%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=2393">赤峰学院</a></strong>
+	<span class='cf_rank' title='院校综合排名:511'>综TOP:511</span>
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>综合
+</td>
+    <td>本科第二批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH44Div2','','hide')"><div id="apSH44Div1" class="apSHDiv1">
+     <div id="apSH44Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：321分<br>平均分：331分<br>最高分：381分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH44Div2','','show')" onmouseout="MM_showHideLayers('apSH44Div2','','hide')">331<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>231人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=2405&m_pici=2&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH45Div2','','hide')" class="cf63" style="text-align: left"><div id="apH45Div1" class="apHDiv1">
+     <div id="apH45Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="27" height="8" src="/images/bk_hot_blue.gif"><img  width ="63" height="8" src="/images/bk_hot_grey.gif"/>28%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：60人<br>实际报考人数：17人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH45Div2','','show')" onmouseout="MM_showHideLayers('apH45Div2','','hide')"><img  width ="7" height="8" src="/images/bk_hot_blue.gif"><img  width ="43" height="8" src="/images/bk_hot_grey.gif"/><br>28%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=2665">河套学院</a></strong>
+	<span class='cf_rank' title='院校综合排名:654'>综TOP:654</span>
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>
+</td>
+    <td>本科第二批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH45Div2','','hide')"><div id="apSH45Div1" class="apSHDiv1">
+     <div id="apSH45Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：321分<br>平均分：331分<br>最高分：352分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH45Div2','','show')" onmouseout="MM_showHideLayers('apSH45Div2','','hide')">331<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>60人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=2677&m_pici=2&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH46Div2','','hide')" class="cf63" style="text-align: left"><div id="apH46Div1" class="apHDiv1">
+     <div id="apH46Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="26" height="8" src="/images/bk_hot_blue.gif"><img  width ="64" height="8" src="/images/bk_hot_grey.gif"/>24%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：102人<br>实际报考人数：24人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH46Div2','','show')" onmouseout="MM_showHideLayers('apH46Div2','','hide')"><img  width ="6" height="8" src="/images/bk_hot_blue.gif"><img  width ="44" height="8" src="/images/bk_hot_grey.gif"/><br>24%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=2504">集宁师范学院</a></strong>
+	<span class='cf_rank' title='院校综合排名:546'>综TOP:546</span>
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>—
+</td>
+    <td>本科第二批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH46Div2','','hide')"><div id="apSH46Div1" class="apSHDiv1">
+     <div id="apSH46Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：321分<br>平均分：328分<br>最高分：341分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH46Div2','','show')" onmouseout="MM_showHideLayers('apSH46Div2','','hide')">328<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>102人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=2516&m_pici=2&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH47Div2','','hide')" class="cf63" style="text-align: left"><div id="apH47Div1" class="apHDiv1">
+     <div id="apH47Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="82" height="8" src="/images/bk_hot_hot.gif"><img  width ="20" height="8" src="/images/bk_hot_grey.gif"/>767%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：15人<br>实际报考人数：115人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH47Div2','','show')" onmouseout="MM_showHideLayers('apH47Div2','','hide')"><img  width ="62" height="8" src="/images/bk_hot_hot.gif"><img  width ="0" height="8" src="/images/bk_hot_grey.gif"/><br>767%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=2599">青海民族大学</a></strong>
+	<span class='cf_rank' title='院校综合排名:317'>综TOP:317</span>
+		        
+	</td>
+
+
+    <td>青海</td>
+    <td>—
+</td>
+    <td>本科二批B</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH47Div2','','hide')"><div id="apSH47Div1" class="apSHDiv1">
+     <div id="apSH47Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：310分<br>平均分：320分<br>最高分：342分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH47Div2','','show')" onmouseout="MM_showHideLayers('apSH47Div2','','hide')">320<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>15人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=2611&m_pici=2B&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH48Div2','','hide')" class="cf63" style="text-align: left"><div id="apH48Div1" class="apHDiv1">
+     <div id="apH48Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="50" height="8" src="/images/bk_hot_red.gif"><img  width ="40" height="8" src="/images/bk_hot_grey.gif"/>120%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：20人<br>实际报考人数：24人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH48Div2','','show')" onmouseout="MM_showHideLayers('apH48Div2','','hide')"><img  width ="30" height="8" src="/images/bk_hot_red.gif"><img  width ="20" height="8" src="/images/bk_hot_grey.gif"/><br>120%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=3877">内蒙古民族幼儿师范高等专科学校</a></strong>
+	
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH48Div2','','hide')"><div id="apSH48Div1" class="apSHDiv1">
+     <div id="apSH48Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：303分<br>平均分：311分<br>最高分：352分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH48Div2','','show')" onmouseout="MM_showHideLayers('apSH48Div2','','hide')">311<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>20人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=3889&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH49Div2','','hide')" class="cf63" style="text-align: left"><div id="apH49Div1" class="apHDiv1">
+     <div id="apH49Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="47" height="8" src="/images/bk_hot_red.gif"><img  width ="42" height="8" src="/images/bk_hot_grey.gif"/>111%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：35人<br>实际报考人数：39人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH49Div2','','show')" onmouseout="MM_showHideLayers('apH49Div2','','hide')"><img  width ="27" height="8" src="/images/bk_hot_red.gif"><img  width ="22" height="8" src="/images/bk_hot_grey.gif"/><br>111%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=1982">包头铁道职业技术学院</a></strong>
+	
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>—
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH49Div2','','hide')"><div id="apSH49Div1" class="apSHDiv1">
+     <div id="apSH49Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：303分<br>平均分：308分<br>最高分：319分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH49Div2','','show')" onmouseout="MM_showHideLayers('apSH49Div2','','hide')">308<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>35人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=1994&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH50Div2','','hide')" class="cf63" style="text-align: left"><div id="apH50Div1" class="apHDiv1">
+     <div id="apH50Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="46" height="8" src="/images/bk_hot_red.gif"><img  width ="44" height="8" src="/images/bk_hot_grey.gif"/>104%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：55人<br>实际报考人数：57人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH50Div2','','show')" onmouseout="MM_showHideLayers('apH50Div2','','hide')"><img  width ="26" height="8" src="/images/bk_hot_red.gif"><img  width ="24" height="8" src="/images/bk_hot_grey.gif"/><br>104%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=2795">乌兰察布医学高等专科学校</a></strong>
+	
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH50Div2','','hide')"><div id="apSH50Div1" class="apSHDiv1">
+     <div id="apSH50Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：276分<br>平均分：291分<br>最高分：317分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH50Div2','','show')" onmouseout="MM_showHideLayers('apSH50Div2','','hide')">291<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>55人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=2807&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH51Div2','','hide')" class="cf63" style="text-align: left"><div id="apH51Div1" class="apHDiv1">
+     <div id="apH51Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="45" height="8" src="/images/bk_hot_red.gif"><img  width ="44" height="8" src="/images/bk_hot_grey.gif"/>102%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：100人<br>实际报考人数：102人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH51Div2','','show')" onmouseout="MM_showHideLayers('apH51Div2','','hide')"><img  width ="25" height="8" src="/images/bk_hot_red.gif"><img  width ="24" height="8" src="/images/bk_hot_grey.gif"/><br>102%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=2504">集宁师范学院</a></strong>
+	<span class='cf_rank' title='院校综合排名:546'>综TOP:546</span>
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>—
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH51Div2','','hide')"><div id="apSH51Div1" class="apSHDiv1">
+     <div id="apSH51Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：269分<br>平均分：287分<br>最高分：315分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH51Div2','','show')" onmouseout="MM_showHideLayers('apSH51Div2','','hide')">287<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>100人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=2516&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH52Div2','','hide')" class="cf63" style="text-align: left"><div id="apH52Div1" class="apHDiv1">
+     <div id="apH52Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="48" height="8" src="/images/bk_hot_red.gif"><img  width ="42" height="8" src="/images/bk_hot_grey.gif"/>112%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：25人<br>实际报考人数：28人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH52Div2','','show')" onmouseout="MM_showHideLayers('apH52Div2','','hide')"><img  width ="28" height="8" src="/images/bk_hot_red.gif"><img  width ="22" height="8" src="/images/bk_hot_grey.gif"/><br>112%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=2809">呼伦贝尔职业技术学院</a></strong>
+	
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH52Div2','','hide')"><div id="apSH52Div1" class="apSHDiv1">
+     <div id="apSH52Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：266分<br>平均分：284分<br>最高分：307分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH52Div2','','show')" onmouseout="MM_showHideLayers('apSH52Div2','','hide')">284<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>25人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=2821&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH53Div2','','hide')" class="cf63" style="text-align: left"><div id="apH53Div1" class="apHDiv1">
+     <div id="apH53Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="46" height="8" src="/images/bk_hot_red.gif"><img  width ="43" height="8" src="/images/bk_hot_grey.gif"/>107%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：502人<br>实际报考人数：538人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH53Div2','','show')" onmouseout="MM_showHideLayers('apH53Div2','','hide')"><img  width ="26" height="8" src="/images/bk_hot_red.gif"><img  width ="23" height="8" src="/images/bk_hot_grey.gif"/><br>107%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=2516">呼和浩特民族学院</a></strong>
+	<span class='cf_rank' title='院校综合排名:590'>综TOP:590</span>
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>—
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH53Div2','','hide')"><div id="apSH53Div1" class="apSHDiv1">
+     <div id="apSH53Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：262分<br>平均分：290分<br>最高分：362分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH53Div2','','show')" onmouseout="MM_showHideLayers('apSH53Div2','','hide')">290<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>502人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=2528&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH54Div2','','hide')" class="cf63" style="text-align: left"><div id="apH54Div1" class="apHDiv1">
+     <div id="apH54Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="45" height="8" src="/images/bk_hot_red.gif"><img  width ="44" height="8" src="/images/bk_hot_grey.gif"/>102%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：130人<br>实际报考人数：133人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH54Div2','','show')" onmouseout="MM_showHideLayers('apH54Div2','','hide')"><img  width ="25" height="8" src="/images/bk_hot_red.gif"><img  width ="24" height="8" src="/images/bk_hot_grey.gif"/><br>102%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=1975">通辽职业学院</a></strong>
+	
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>—
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH54Div2','','hide')"><div id="apSH54Div1" class="apSHDiv1">
+     <div id="apSH54Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：260分<br>平均分：293分<br>最高分：316分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH54Div2','','show')" onmouseout="MM_showHideLayers('apSH54Div2','','hide')">293<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>130人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=1987&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH55Div2','','hide')" class="cf63" style="text-align: left"><div id="apH55Div1" class="apHDiv1">
+     <div id="apH55Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="46" height="8" src="/images/bk_hot_red.gif"><img  width ="44" height="8" src="/images/bk_hot_grey.gif"/>104%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：150人<br>实际报考人数：156人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH55Div2','','show')" onmouseout="MM_showHideLayers('apH55Div2','','hide')"><img  width ="26" height="8" src="/images/bk_hot_red.gif"><img  width ="24" height="8" src="/images/bk_hot_grey.gif"/><br>104%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=88">内蒙古师范大学</a></strong>
+	<span class='cf_rank' title='院校综合排名:212'>综TOP:212</span>
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>师范
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH55Div2','','hide')"><div id="apSH55Div1" class="apSHDiv1">
+     <div id="apSH55Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：253分<br>平均分：298分<br>最高分：344分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH55Div2','','show')" onmouseout="MM_showHideLayers('apSH55Div2','','hide')">298<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>150人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=100&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH56Div2','','hide')" class="cf63" style="text-align: left"><div id="apH56Div1" class="apHDiv1">
+     <div id="apH56Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="45" height="8" src="/images/bk_hot_red.gif"><img  width ="45" height="8" src="/images/bk_hot_grey.gif"/>100%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：40人<br>实际报考人数：40人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH56Div2','','show')" onmouseout="MM_showHideLayers('apH56Div2','','hide')"><img  width ="25" height="8" src="/images/bk_hot_red.gif"><img  width ="25" height="8" src="/images/bk_hot_grey.gif"/><br>100%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=449">呼伦贝尔学院</a></strong>
+	<span class='cf_rank' title='院校综合排名:590'>综TOP:590</span>
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>综合
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH56Div2','','hide')"><div id="apSH56Div1" class="apSHDiv1">
+     <div id="apSH56Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：252分<br>平均分：280分<br>最高分：310分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH56Div2','','show')" onmouseout="MM_showHideLayers('apSH56Div2','','hide')">280<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>40人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=461&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH57Div2','','hide')" class="cf63" style="text-align: left"><div id="apH57Div1" class="apHDiv1">
+     <div id="apH57Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="45" height="8" src="/images/bk_hot_red.gif"><img  width ="45" height="8" src="/images/bk_hot_grey.gif"/>100%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：10人<br>实际报考人数：10人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH57Div2','','show')" onmouseout="MM_showHideLayers('apH57Div2','','hide')"><img  width ="25" height="8" src="/images/bk_hot_red.gif"><img  width ="25" height="8" src="/images/bk_hot_grey.gif"/><br>100%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=1996">黑龙江民族职业学院</a></strong>
+	
+		        
+	</td>
+
+
+    <td>黑龙江</td>
+    <td>—
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH57Div2','','hide')"><div id="apSH57Div1" class="apSHDiv1">
+     <div id="apSH57Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：252分<br>平均分：280分<br>最高分：309分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH57Div2','','show')" onmouseout="MM_showHideLayers('apSH57Div2','','hide')">280<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>10人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=2008&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH58Div2','','hide')" class="cf63" style="text-align: left"><div id="apH58Div1" class="apHDiv1">
+     <div id="apH58Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="46" height="8" src="/images/bk_hot_red.gif"><img  width ="44" height="8" src="/images/bk_hot_grey.gif"/>104%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：150人<br>实际报考人数：156人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH58Div2','','show')" onmouseout="MM_showHideLayers('apH58Div2','','hide')"><img  width ="26" height="8" src="/images/bk_hot_red.gif"><img  width ="24" height="8" src="/images/bk_hot_grey.gif"/><br>104%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=1077">呼和浩特职业学院</a></strong>
+	
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>综合
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH58Div2','','hide')"><div id="apSH58Div1" class="apSHDiv1">
+     <div id="apSH58Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：245分<br>平均分：271分<br>最高分：318分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH58Div2','','show')" onmouseout="MM_showHideLayers('apSH58Div2','','hide')">271<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>150人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=1089&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+
+  
+  <tr>
+  
+  
+ <!----------------------------start 热度推荐-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apH59Div2','','hide')" class="cf63" style="text-align: left"><div id="apH59Div1" class="apHDiv1">
+     <div id="apH59Div2"  class="apHDiv2">
+    <table border="0" width="100%" id="table2" cellpadding="0" >
+	<tr>
+		<td colspan="3"><strong>2013年内蒙古考生报考热度</strong>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3"><img  width ="45" height="8" src="/images/bk_hot_red.gif"><img  width ="44" height="8" src="/images/bk_hot_grey.gif"/>101%</td>
+		
+	</tr>
+	<tr>
+		<td colspan="3"><strong>计划招收人数：160人<br>实际报考人数：162人<strong>
+	</tr>
+		<tr>
+		<td><img  width ="50" height="8" src="/images/bk_hot_blue.gif"><br>没有招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_red.gif"><br>已经招满</td>
+		<td><img  width ="50" height="8" src="/images/bk_hot_hot.gif"><br>超热门</td>
+	</tr>
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apH59Div2','','show')" onmouseout="MM_showHideLayers('apH59Div2','','hide')"><img  width ="25" height="8" src="/images/bk_hot_red.gif"><img  width ="24" height="8" src="/images/bk_hot_grey.gif"/><br>101%</div></td>
+     
+       
+      <!----------------------------end 热度推荐------------------------------------->
+      
+    <td style="text-align: left">
+	
+		<strong><a target="_blank" href="university.aspx?id=1981">内蒙古商贸职业学院</a></strong>
+	
+		        
+	</td>
+
+
+    <td>内蒙古</td>
+    <td>—
+</td>
+    <td>高职高专批</td>
+
+    <!----------------------------start 生源指标-------------------------------------->
+  
+
+  <td onfocus="MM_showHideLayers('apSH59Div2','','hide')"><div id="apSH59Div1" class="apSHDiv1">
+     <div id="apSH59Div2"  class="apSHDiv2">
+    <table border="0" width="100%" id="table3" cellpadding="0" class="sjgtable" >
+
+	<tr>
+		<td><strong>提档分数线：240分<br>平均分：277分<br>最高分：316分<strong>
+	</tr>
+
+</table>
+      </div>
+    </div>
+     <div onmouseover="MM_showHideLayers('apSH59Div2','','show')" onmouseout="MM_showHideLayers('apSH59Div2','','hide')">277<br><img  src="/images/more.gif"></div></td>
+     
+       
+           
+     </td>
+      <!----------------------------end 生源指标------------------------------------->
+  
+
+
+    <td>160人</td>
+    <td>
+		<a target ="_blank" href="index_zysjcx.aspx?action=university&u_u_id=1993&m_pici=3&m_years=2013"><span class="c0099cc">专业查看</span></a>
+	</td>
+  </tr>
+   
+   
+   
+</table>
+	
+<table width="400" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="29" colspan="5">&nbsp;</td>
+    </tr>
+  <tr >
+    <td width="20%" height="25" align="center" class="tablebj_line" style="border-right:solid 1px #ccc;border-bottom:solid 1px #ccc;border-left:solid 1px #ccc;border-top:solid 1px #ccc">
+	<a href="?currPage=2&action=fenshu&bscore=720&escore=0&year=2013&J_ScoreProvince=&pici=">上一页</a></td>
+    <td width="20%" align="center" style="border-right:solid 1px #ccc;border-bottom:solid 1px #ccc;border-top:solid 1px #ccc">
+	3/4</td>
+    <td width="20%" height="25" align="center" class="tablebj_line" style="border-right:solid 1px #ccc;border-bottom:solid 1px #ccc;border-top:solid 1px #ccc">
+	<a href="?currPage=4&action=fenshu&bscore=720&escore=0&year=2013&J_ScoreProvince=&pici=">下一页</a></td>  </tr>
+  <tr>
+    <td height="10" colspan="5">&nbsp;</td>
+    </tr>
+</table>
+
+        </div>
+    
+  </div>
+
+</div>
+        </div>
+        
+        
+  </div>
+</div>
+
+<div class="clear"></div>
+<div id="bottom" >
+<p><a href ="/">首页</a> | 
+<a target ="_blank" href ="http://www.gaokaogps.com/info/index.aspx">系统介绍</a> ｜  
+<a target ="_blank" href ="http://www.gaokaogps.com/info/about.aspx">关于我们</a> ｜  
+<a target ="_blank" href ="http://www.gaokaogps.com/info/policy.aspx">免责声明</a> ｜  
+<a target ="_blank" href ="http://www.gaokaogps.com/info/help.aspx">帮助中心</a> ｜  
+<a target ="_blank" href ="http://www.gaokaogps.com/info/contact.aspx">联系我们</a> ｜  
+<a target ="_blank" href ="http://www.gaokaogps.com/info/join.aspx">加盟详情</a> </p>
+<p><span class="en">Copyright &copy; 2011 GaokaoGPS.com All Rights Reserved.</span</p>
+<P>京<span class="en">ICP</span>备<span class="en">12021250</span>-2号 <script language="javascript" type="text/javascript" src="http://js.users.51.la/15712899.js"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F6078846d157d8a8c9a86e68a7c03ff67' type='text/javascript'%3E%3C/script%3E"));
+</script></P>
+
+
+
+</div>
+</body>
+</html>
